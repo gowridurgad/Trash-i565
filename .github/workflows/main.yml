@@ -43,7 +43,8 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.x'
-        install-dir: ${{ runner.temp }}/dotnet
+      env:
+         DOTNET_INSTALL_DIR: ${{ github.workspace }}/.dotnet
     - name: Test Dotnet
       run: |
         dotnet --version
